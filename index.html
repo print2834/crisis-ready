@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crisis-Ready: Your Guide to Emergency Preparedness</title>
+    <meta name="description" content="Comprehensive guides, checklists, and reviews to help US households prepare for natural disasters, power outages, and other emergencies. Stay safe with Crisis-Ready.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+        }
+        /* Style for active nav link */
+        .nav-link.active {
+            font-weight: 600;
+            color: #dc2626; /* Red color for active link */
+            border-bottom: 2px solid #dc2626;
+        }
+        /* Style for AdSense Placeholders */
+        .adsense-placeholder {
+            background-color: #e9ecef; /* Light grey */
+            border: 1px dashed #adb5bd; /* Dashed border */
+            color: #6c757d; /* Muted text color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 0.5rem; /* Rounded corners */
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.8rem;
+            min-height: 90px; /* Standard ad height */
+            margin: 1rem 0; /* Spacing */
+        }
+        /* Subtle animation for page transitions */
+        .page-section {
+            display: none; /* Hide pages by default */
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Style for hero background */
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* Resilient landscape - replace if needed */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        /* Style for download buttons */
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            background-color: #1e40af; /* Dark blue */
+            color: white;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .download-button:hover {
+            background-color: #1d4ed8; /* Slightly lighter blue */
+        }
+        .download-button i {
+            margin-right: 0.5rem;
+        }
+        /* Style for affiliate links/buttons */
+        .affiliate-button {
+             display: inline-flex;
+            align-items: center;
+            padding: 0.6rem 1.2rem;
+            background-color: #16a34a; /* Green */
+            color: white;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            font-size: 0.9rem;
+        }
+         .affiliate-button:hover {
+            background-color: #22c55e; /* Lighter green */
+        }
+        .affiliate-button i {
+             margin-right: 0.5rem;
+        }
+        /* Responsive iframe for map placeholder */
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            border-radius: 0.5rem;
+            border: 1px solid #dee2e6;
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-red-700 hover:text-red-800 transition duration-300 page-link">
+                <i class="fas fa-shield-alt mr-2"></i>Crisis-Ready
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="nav-link text-gray-600 hover:text-red-600 transition duration-300 page-link active" data-page="home">Home</a>
+                <div class="relative group">
+                     <button class="nav-link text-gray-600 hover:text-red-600 transition duration-300 group-hover:text-red-600">
+                        Guides <i class="fas fa-chevron-down text-xs ml-1"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 invisible group-hover:visible z-10">
+                        <a href="#guide-hurricane" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-600 page-link" data-page="guide-hurricane">Hurricane Prep</a>
+                        <a href="#guide-wildfire" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-600 page-link" data-page="guide-wildfire">Wildfire Safety</a>
+                        <a href="#guide-flood" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-600 page-link" data-page="guide-flood">Flood Readiness</a>
+                        <a href="#guide-power-outage" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-600 page-link" data-page="guide-power-outage">Power Outage Plan</a>
+                    </div>
+                </div>
+                 <div class="relative group">
+                     <button class="nav-link text-gray-600 hover:text-red-600 transition duration-300 group-hover:text-red-600">
+                        Gear <i class="fas fa-chevron-down text-xs ml-1"></i>
+                    </button>
+                    <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 invisible group-hover:visible z-10">
+                        <a href="#gear-radios" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-600 page-link" data-page="gear-radios">Emergency Radios</a>
+                        <a href="#gear-flashlights" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-600 page-link" data-page="gear-flashlights">Flashlights & Lighting</a>
+                        <a href="#gear-first-aid" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-600 page-link" data-page="gear-first-aid">First Aid Kits</a>
+                    </div>
+                </div>
+                <a href="#blog" class="nav-link text-gray-600 hover:text-red-600 transition duration-300 page-link" data-page="blog">Blog</a>
+                <a href="#tools" class="nav-link text-gray-600 hover:text-red-600 transition duration-300 page-link" data-page="tools">Tools & Downloads</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-red-600 focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <a href="#home" class="block px-4 py-3 text-gray-600 hover:bg-gray-100 hover:text-red-600 page-link" data-page="home">Home</a>
+            <div class="px-4 py-2">
+                <span class="font-semibold text-gray-700">Guides</span>
+                <a href="#guide-hurricane" class="block pl-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-red-600 page-link" data-page="guide-hurricane">Hurricane Prep</a>
+                <a href="#guide-wildfire" class="block pl-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-red-600 page-link" data-page="guide-wildfire">Wildfire Safety</a>
+                <a href="#guide-flood" class="block pl-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-red-600 page-link" data-page="guide-flood">Flood Readiness</a>
+                 <a href="#guide-power-outage" class="block pl-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-red-600 page-link" data-page="guide-power-outage">Power Outage Plan</a>
+            </div>
+             <div class="px-4 py-2">
+                <span class="font-semibold text-gray-700">Gear</span>
+                 <a href="#gear-radios" class="block pl-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-red-600 page-link" data-page="gear-radios">Emergency Radios</a>
+                 <a href="#gear-flashlights" class="block pl-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-red-600 page-link" data-page="gear-flashlights">Flashlights & Lighting</a>
+                 <a href="#gear-first-aid" class="block pl-4 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-red-600 page-link" data-page="gear-first-aid">First Aid Kits</a>
+            </div>
+            <a href="#blog" class="block px-4 py-3 text-gray-600 hover:bg-gray-100 hover:text-red-600 page-link" data-page="blog">Blog</a>
+            <a href="#tools" class="block px-4 py-3 text-gray-600 hover:bg-gray-100 hover:text-red-600 page-link" data-page="tools">Tools & Downloads</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <section id="page-home" class="page-section" style="display: block;"> <div class="hero-bg rounded-lg shadow-lg overflow-hidden mb-12">
+                <div class="hero-content text-center py-20 px-6">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Be Prepared, Not Scared.</h1>
+                    <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">Your trusted resource for practical emergency preparedness. We provide expert guides, checklists, and gear reviews to help you protect your family and property during any crisis.</p>
+                    <a href="#guide-hurricane" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 text-lg page-link" data-page="guide-hurricane">Start Preparing Now</a>
+                </div>
+            </div>
+
+             <div class="adsense-placeholder">Ad Placeholder (e.g., 728x90)</div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-4">Why Emergency Preparedness Matters</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    In an uncertain world, being prepared for emergencies isn't just for "preppers" – it's a fundamental responsibility for every household. Natural disasters like hurricanes, wildfires, and floods can strike with little warning. Power grid failures can leave communities in the dark. Economic downturns can impact access to essential resources.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    Crisis-Ready is here to cut through the noise and provide clear, actionable steps you can take today. From building a basic emergency kit to developing a comprehensive family safety plan, we cover everything you need to enhance your resilience and peace of mind. Don't wait for disaster to strike – prepare now.
+                </p>
+            </div>
+
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6 text-center">Explore Preparedness Categories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fas fa-house-damage text-4xl text-red-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Disaster Type Guides</h3>
+                    <p class="text-gray-600 mb-4">Specific checklists and action plans for hurricanes, wildfires, floods, earthquakes, and more.</p>
+                    <a href="#guide-hurricane" class="text-red-600 hover:text-red-800 font-semibold page-link" data-page="guide-hurricane">Learn More &rarr;</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fas fa-tools text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Gear & Supplies</h3>
+                    <p class="text-gray-600 mb-4">Reviews and recommendations for essential emergency gear: radios, lights, water filters, first aid.</p>
+                    <a href="#gear-radios" class="text-blue-600 hover:text-blue-800 font-semibold page-link" data-page="gear-radios">Find Gear &rarr;</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fas fa-utensils text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Food & Water Storage</h3>
+                    <p class="text-gray-600 mb-4">Guidance on building a long-lasting food supply and ensuring access to safe drinking water.</p>
+                    <a href="#blog" class="text-green-600 hover:text-green-800 font-semibold page-link" data-page="blog">Storage Tips &rarr;</a> </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fas fa-briefcase-medical text-4xl text-yellow-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">First Aid & Medical</h3>
+                    <p class="text-gray-600 mb-4">Essential first aid skills and kit contents for handling injuries when help is delayed.</p>
+                    <a href="#gear-first-aid" class="text-yellow-600 hover:text-yellow-800 font-semibold page-link" data-page="gear-first-aid">Medical Prep &rarr;</a>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fas fa-bolt text-4xl text-purple-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Power & Communication</h3>
+                    <p class="text-gray-600 mb-4">Stay connected and powered up during outages with generators, solar chargers, and radios.</p>
+                     <a href="#guide-power-outage" class="text-purple-600 hover:text-purple-800 font-semibold page-link" data-page="guide-power-outage">Power Solutions &rarr;</a>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fas fa-users text-4xl text-indigo-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Family Safety Plans</h3>
+                    <p class="text-gray-600 mb-4">Create effective communication plans and meeting points for your loved ones.</p>
+                    <a href="#blog" class="text-indigo-600 hover:text-indigo-800 font-semibold page-link" data-page="blog">Plan Together &rarr;</a> </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white p-8 rounded-lg shadow-lg text-center mb-8">
+                <h2 class="text-3xl font-semibold mb-4">Stay Updated & Prepared</h2>
+                <p class="text-blue-100 mb-6">Sign up for our newsletter to receive the latest preparedness tips, gear alerts, and exclusive content directly in your inbox.</p>
+                <form class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <input type="email" placeholder="Enter your email" class="px-4 py-2 rounded-md text-gray-800 sm:w-1/2 lg:w-1/3 focus:outline-none focus:ring-2 focus:ring-blue-300" required>
+                    <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-md transition duration-300 w-full sm:w-auto">Subscribe</button>
+                </form>
+                <p class="text-xs text-blue-200 mt-4">We respect your privacy. No spam, ever.</p>
+            </div>
+
+             <div class="adsense-placeholder">Ad Placeholder (e.g., Responsive)</div>
+        </section>
+
+        <section id="page-guide-hurricane" class="page-section">
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Hurricane Preparedness Checklist 2025</h1>
+                <p class="text-gray-600 mb-6 text-sm">Last Updated: May 5, 2025</p>
+
+                <img src="https://images.unsplash.com/photo-1604341116399-45a1f369c617?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Storm clouds gathering over a coastal area" class="rounded-lg shadow-md mb-6 w-full h-64 md:h-96 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1350x384/cccccc/666666?text=Hurricane+Image+Unavailable';">
+
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Hurricane season requires serious preparation. High winds, heavy rain, storm surges, and power outages pose significant threats. This guide provides a comprehensive checklist to help you prepare your home and family well before a storm approaches. Remember, early preparation is key to safety.
+                </p>
+
+                <div class="adsense-placeholder my-6">Ad Placeholder (e.g., 300x250 or Responsive)</div>
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Before Hurricane Season Starts:</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                    <li>Develop a Family Emergency Plan: Designate meeting points, communication methods, and evacuation routes. Practice the plan.</li>
+                    <li>Build or Restock Your Emergency Kit: Include water (1 gallon per person/day for 3-7 days), non-perishable food, flashlight, batteries, first-aid supplies, medications, sanitation items, and important documents.</li>
+                    <li>Check Insurance Coverage: Review your homeowner's or renter's insurance policy. Understand coverage for wind and flood damage (flood insurance is often separate).</li>
+                    <li>Strengthen Your Home: Trim trees and shrubs around your property. Secure or bring in outdoor furniture, decorations, and trash cans. Consider installing storm shutters or boarding up windows.</li>
+                    <li>Know Your Zone: Determine if you live in an evacuation zone and learn the designated routes.</li>
+                </ul>
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">When a Hurricane Watch is Issued:</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                    <li>Monitor Weather Updates: Stay informed through NOAA Weather Radio or local news outlets.</li>
+                    <li>Fuel Vehicles and Generators: Gas stations may lose power or run out of fuel.</li>
+                    <li>Gather Emergency Supplies: Ensure your kit is easily accessible.</li>
+                    <li>Secure Your Home: Board up windows, secure doors, and bring in any remaining outdoor items.</li>
+                    <li>Charge Devices: Keep cell phones, power banks, and radios fully charged.</li>
+                </ul>
+
+                 <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">When a Hurricane Warning is Issued:</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                    <li>Follow Evacuation Orders: If told to evacuate, do so immediately. Turn off gas, water, and electricity if instructed.</li>
+                    <li>If Staying Home: Shelter in a small, interior, windowless room on the lowest level not prone to flooding. Stay away from windows and glass doors.</li>
+                    <li>Listen Continuously: Keep your radio tuned for updates.</li>
+                </ul>
+
+                 <div class="mt-8 text-center">
+                     <a href="#" class="download-button" download="Hurricane-Checklist-CrisisReady.pdf">
+                         <i class="fas fa-download"></i> Download Printable Checklist (PDF)
+                     </a>
+                     <p class="text-sm text-gray-500 mt-2">(Placeholder Link)</p>
+                 </div>
+
+                 <div class="adsense-placeholder mt-8">Ad Placeholder (e.g., Responsive)</div>
+            </div>
+        </section>
+
+        <section id="page-guide-wildfire" class="page-section">
+             <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Wildfire Safety & Preparedness</h1>
+                 <p class="text-gray-600 mb-6 text-sm">Protect your home and family from the growing threat of wildfires.</p>
+
+                <img src="https://images.unsplash.com/photo-1564301916471-a114775936a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Hazy view of a forest fire in the distance" class="rounded-lg shadow-md mb-6 w-full h-64 md:h-96 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1350x384/cccccc/666666?text=Wildfire+Image+Unavailable';">
+
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Wildfires are becoming increasingly common and destructive in many parts of the US. Preparing your property ("hardening" your home) and having a solid evacuation plan are crucial for safety. This guide outlines key steps for wildfire preparedness.
+                </p>
+
+                <div class="adsense-placeholder my-6">Ad Placeholder (e.g., 300x250 or Responsive)</div>
+
+                 <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Creating Defensible Space:</h2>
+                 <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                    <li>Zone 1 (0-5 feet): Remove all flammable vegetation, mulch, and items from under/around decks and structures. Use non-flammable landscaping like rocks or gravel.</li>
+                    <li>Zone 2 (5-30 feet): Keep grass mowed short. Trim trees to create space between crowns and remove lower branches. Remove dead vegetation.</li>
+                    <li>Zone 3 (30-100+ feet): Thin out dense vegetation and remove dead trees/shrubs.</li>
+                 </ul>
+
+                 <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Hardening Your Home:</h2>
+                 <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                     <li>Roof: Use Class A fire-rated roofing materials (asphalt shingles, metal, tile). Keep roofs and gutters clear of debris.</li>
+                     <li>Vents: Cover attic, foundation, and eaves vents with 1/8-inch metal mesh to block embers.</li>
+                     <li>Windows: Install dual-paned windows with tempered glass.</li>
+                     <li>Siding & Decks: Use fire-resistant siding materials. Treat wooden decks with fire retardant or choose non-combustible materials.</li>
+                 </ul>
+
+                 <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Evacuation Planning:</h2>
+                 <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                     <li>Plan Multiple Routes: Know several ways out of your neighborhood and town.</li>
+                     <li>Prepare a "Go Bag": Include essentials like medications, documents, water, snacks, masks (N95), goggles, and a change of clothes.</li>
+                     <li>Stay Informed: Monitor local alerts (radio, apps, emergency services).</li>
+                     <li>Leave Early: Evacuate as soon as orders are given, or even before if you feel unsafe. Wildfires move quickly.</li>
+                 </ul>
+
+                 <div class="mt-8 text-center">
+                     <a href="#" class="download-button" download="Wildfire-Checklist-CrisisReady.pdf">
+                         <i class="fas fa-download"></i> Download Wildfire Safety Checklist (PDF)
+                     </a>
+                      <p class="text-sm text-gray-500 mt-2">(Placeholder Link)</p>
+                 </div>
+
+                 <div class="adsense-placeholder mt-8">Ad Placeholder (e.g., Responsive)</div>
+            </div>
+        </section>
+
+        <section id="page-guide-flood" class="page-section">
+             <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Flood Readiness: Protect Your Property</h1>
+                 <p class="text-gray-600 mb-6 text-sm">Flooding can happen anywhere. Be prepared.</p>
+
+                <img src="https://images.unsplash.com/photo-1582482790622-9000ipa8a95a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Flooded street with submerged cars" class="rounded-lg shadow-md mb-6 w-full h-64 md:h-96 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1350x384/cccccc/666666?text=Flood+Image+Unavailable';">
+
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Floods are among the most common and costly natural disasters. Whether from heavy rain, river overflow, or storm surge, floodwaters can cause significant damage. Understanding your risk and taking preventative measures is essential.
+                </p>
+
+                 <div class="adsense-placeholder my-6">Ad Placeholder (e.g., 300x250 or Responsive)</div>
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Know Your Risk & Insurance:</h2>
+                 <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                    <li>Check Flood Maps: Visit FEMA's Flood Map Service Center to understand your area's flood risk.</li>
+                    <li>Get Flood Insurance: Standard homeowner's insurance does NOT cover flood damage. Purchase flood insurance through the National Flood Insurance Program (NFIP) or a private insurer. There's typically a 30-day waiting period.</li>
+                 </ul>
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Protect Your Property:</h2>
+                 <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                    <li>Elevate Utilities: Raise your furnace, water heater, and electrical panel if they are in flood-prone areas (basement).</li>
+                    <li>Install Sump Pump: Ensure your sump pump is working and consider a battery backup.</li>
+                    <li>Seal Foundation Cracks: Prevent water seepage.</li>
+                    <li>Install Flood Vents: Allow floodwater to flow through foundation walls, reducing pressure.</li>
+                    <li>Keep Drains Clear: Ensure gutters and storm drains are free of debris.</li>
+                 </ul>
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">During a Flood Watch/Warning:</h2>
+                 <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                    <li>Move Valuables: Relocate important documents, electronics, and sentimental items to higher floors.</li>
+                    <li>Secure Outdoor Items: Bring in or tie down anything that could float away.</li>
+                    <li>Monitor Alerts: Stay tuned to local authorities and weather updates.</li>
+                    <li>Evacuate if Ordered: Never drive or walk through floodwaters. "Turn Around, Don't Drown!"</li>
+                    <li>Prepare Your Go-Bag: Have your emergency kit ready.</li>
+                 </ul>
+
+                  <div class="adsense-placeholder mt-8">Ad Placeholder (e.g., Responsive)</div>
+            </div>
+        </section>
+
+        <section id="page-guide-power-outage" class="page-section">
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Power Outage Preparedness Plan</h1>
+                <p class="text-gray-600 mb-6 text-sm">Stay safe and comfortable when the lights go out.</p>
+
+                <img src="https://images.unsplash.com/photo-1616529911034-a1434479501a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Person holding a flashlight in a dark room" class="rounded-lg shadow-md mb-6 w-full h-64 md:h-96 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1350x384/cccccc/666666?text=Power+Outage+Image+Unavailable';">
+
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Power outages can happen anytime due to storms, equipment failure, or grid issues. Being prepared can make a significant difference in your comfort and safety, especially during extended outages.
+                </p>
+
+                <div class="adsense-placeholder my-6">Ad Placeholder (e.g., 300x250 or Responsive)</div>
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Essential Supplies:</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                    <li>Lighting: Flashlights (LED preferred), headlamps, lanterns (battery-powered or solar). Have extra batteries. Avoid candles due to fire risk.</li>
+                    <li>Communication: Battery-powered or hand-crank NOAA weather radio. Portable phone charger/power bank.</li>
+                    <li>Food & Water: Non-perishable food items that don't require cooking. Manual can opener. Stored water.</li>
+                    <li>Temperature Control: Blankets, sleeping bags for warmth. Battery-powered fans for cooling (if applicable).</li>
+                    <li>First Aid Kit: Ensure it's stocked and accessible.</li>
+                    <li>Medications: Have backups of essential medications, especially those requiring refrigeration (plan with your doctor/pharmacy).</li>
+                </ul>
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">During the Outage:</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                    <li>Report the Outage: Notify your utility company.</li>
+                    <li>Food Safety: Keep refrigerator and freezer doors closed as much as possible. A full freezer stays cold longer. Use perishable food first.</li>
+                    <li>Disconnect Appliances: Unplug sensitive electronics to prevent damage from power surges when electricity returns.</li>
+                    <li>Generator Safety: If using a generator, operate it OUTDOORS and away from windows/doors to prevent carbon monoxide poisoning. Never run it in a garage or indoors.</li>
+                    <li>Check on Neighbors: Especially the elderly or those with medical needs.</li>
+                    <li>Stay Informed: Listen to your radio for updates.</li>
+                </ul>
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Alternative Power Sources (Considerations):</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                    <li>Portable Generators: Good for powering essential appliances. Requires fuel and safe operation.</li>
+                    <li>Standby Generators: Automatically turn on during an outage. More expensive installation.</li>
+                    <li>Portable Power Stations (Solar Generators): Battery-based, can be recharged via solar panels or wall outlet. Quiet and fume-free. Good for electronics and small appliances.</li>
+                    <li>Solar Chargers: For keeping phones and small devices charged.</li>
+                </ul>
+
+                 <div class="adsense-placeholder mt-8">Ad Placeholder (e.g., Responsive)</div>
+            </div>
+        </section>
+
+        <section id="page-gear-radios" class="page-section">
+             <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Top Emergency Radios for 2025</h1>
+                 <p class="text-gray-600 mb-6 text-sm">Stay informed when other communication lines are down.</p>
+
+                <img src="https://images.unsplash.com/photo-1589259599319-a54a7f56b5c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Hand holding a modern emergency weather radio" class="rounded-lg shadow-md mb-6 w-full h-64 md:h-96 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1350x384/cccccc/666666?text=Radio+Image+Unavailable';">
+
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    An emergency radio is a critical piece of preparedness gear. It allows you to receive vital weather alerts and news updates from NOAA (National Oceanic and Atmospheric Administration) and local stations, even when power and internet are out. Look for radios with multiple power options (battery, hand-crank, solar).
+                </p>
+
+                 <div class="adsense-placeholder my-6">Ad Placeholder (e.g., 300x250 or Responsive)</div>
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Key Features to Look For:</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                    <li>NOAA Weather Band with SAME Alerts: Automatically alerts you to warnings in your specific area.</li>
+                    <li>Multiple Power Sources: Hand-crank, solar panel, rechargeable battery, and standard battery options provide reliability.</li>
+                    <li>AM/FM Reception: Access to local news and information.</li>
+                    <li>USB Charging Port: Ability to charge a smartphone or other small devices.</li>
+                    <li>Flashlight: Built-in light source is a common and useful feature.</li>
+                    <li>Durability & Water Resistance: Important for use in harsh conditions.</li>
+                </ul>
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Top Picks for 2025 (Placeholder Reviews):</h2>
+
+                <div class="border rounded-lg p-4 mb-6 flex flex-col md:flex-row items-center gap-4">
+                     <img src="https://placehold.co/150x150/e0e0e0/666666?text=Radio+1" alt="Placeholder image for Emergency Radio 1" class="w-32 h-32 object-contain rounded-md flex-shrink-0">
+                     <div class="flex-grow">
+                        <h3 class="text-xl font-semibold mb-2">Midland ER310 Emergency Crank Weather Radio</h3>
+                        <p class="text-gray-600 text-sm mb-3">A popular choice known for reliability, multiple power sources (solar, hand crank, rechargeable battery), strong reception, SAME alerts, and a built-in flashlight & USB charger.</p>
+                        <a href="#" class="affiliate-button" target="_blank" rel="noopener sponsored">
+                            <i class="fab fa-amazon"></i> Check Price on Amazon
+                        </a>
+                         <p class="text-xs text-gray-500 mt-1">(Affiliate Link Placeholder)</p>
+                     </div>
+                </div>
+
+                 <div class="border rounded-lg p-4 mb-6 flex flex-col md:flex-row items-center gap-4">
+                     <img src="https://placehold.co/150x150/e0e0e0/666666?text=Radio+2" alt="Placeholder image for Emergency Radio 2" class="w-32 h-32 object-contain rounded-md flex-shrink-0">
+                     <div class="flex-grow">
+                        <h3 class="text-xl font-semibold mb-2">RunningSnail MD-090P Emergency Radio</h3>
+                        <p class="text-gray-600 text-sm mb-3">Often cited for its large battery capacity (can function as a power bank), multiple power options, bright flashlight, reading lamp, and SOS alarm. Good value for features.</p>
+                         <a href="#" class="affiliate-button" target="_blank" rel="noopener sponsored">
+                            <i class="fab fa-amazon"></i> Check Price on Amazon
+                        </a>
+                         <p class="text-xs text-gray-500 mt-1">(Affiliate Link Placeholder)</p>
+                     </div>
+                </div>
+
+                 <div class="border rounded-lg p-4 mb-6 flex flex-col md:flex-row items-center gap-4">
+                     <img src="https://placehold.co/150x150/e0e0e0/666666?text=Radio+3" alt="Placeholder image for Emergency Radio 3" class="w-32 h-32 object-contain rounded-md flex-shrink-0">
+                     <div class="flex-grow">
+                        <h3 class="text-xl font-semibold mb-2">Kaito KA500 Voyager Radio</h3>
+                        <p class="text-gray-600 text-sm mb-3">A feature-rich option with AM/FM/Shortwave/NOAA bands, multiple power sources, USB charging, flashlight, reading lamp, and often praised for its reception quality.</p>
+                         <a href="#" class="affiliate-button" target="_blank" rel="noopener sponsored">
+                            <i class="fab fa-amazon"></i> Check Price on Amazon
+                        </a>
+                         <p class="text-xs text-gray-500 mt-1">(Affiliate Link Placeholder)</p>
+                     </div>
+                </div>
+
+                <p class="text-gray-700 mt-6">
+                    *Disclaimer: Product recommendations are based on general reviews and features. Prices and availability may vary. As an Amazon Associate, Crisis-Ready may earn from qualifying purchases.*
+                </p>
+
+                 <div class="adsense-placeholder mt-8">Ad Placeholder (e.g., Responsive)</div>
+            </div>
+        </section>
+
+        <section id="page-gear-flashlights" class="page-section">
+             <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Essential Flashlights & Lighting</h1>
+                 <p class="text-gray-600 mb-6 text-sm">Reliable light sources are non-negotiable in an emergency.</p>
+
+                 <img src="https://images.unsplash.com/photo-1570864691746-80839a1c9f01?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Various types of flashlights and lanterns" class="rounded-lg shadow-md mb-6 w-full h-64 md:h-96 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1350x384/cccccc/666666?text=Lighting+Image+Unavailable';">
+
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    When the power goes out, reliable lighting is crucial for safety and navigation. Modern LED technology offers bright, efficient, and long-lasting options. Consider having multiple types of lights for different situations.
+                </p>
+
+                 <div class="adsense-placeholder my-6">Ad Placeholder (e.g., 300x250 or Responsive)</div>
+
+                 <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Types of Emergency Lighting:</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                    <li>Handheld Flashlights (LED): Essential for everyone. Look for durable construction, water resistance, multiple brightness modes, and common battery types (AA or AAA are easy to find).</li>
+                    <li>Headlamps: Keep your hands free for tasks. Ideal for navigating or working in the dark.</li>
+                    <li>Lanterns (Battery/Solar): Provide area lighting for rooms or campsites. Look for long battery life and stable bases.</li>
+                    <li>Glow Sticks: Safe, long-lasting, and waterproof light source, great for kids or marking locations.</li>
+                    <li>Solar Garden Lights: Can be brought indoors during an outage for passive, low-level lighting.</li>
+                </ul>
+
+                 <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Key Considerations:</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                    <li>Battery Type & Availability: Standardize if possible (e.g., all AA). Keep plenty of fresh batteries on hand, stored separately. Consider rechargeable batteries (like Eneloops) and a charger (solar or power bank compatible).</li>
+                    <li>Brightness (Lumens): Higher lumens mean brighter light, but also drain batteries faster. Multiple modes are useful.</li>
+                    <li>Durability & Water Resistance: Important for rough conditions. Look for IP ratings (e.g., IPX4 for water resistance).</li>
+                    <li>Backup Options: Don't rely on just one light source.</li>
+                </ul>
+
+                 <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Recommended Gear (Placeholder):</h2>
+                 <div class="border rounded-lg p-4 mb-6">
+                    <h3 class="text-xl font-semibold mb-2">Placeholder: Durable LED Flashlight</h3>
+                    <p class="text-gray-600 text-sm mb-3">Review of a recommended tactical or everyday carry LED flashlight (e.g., Streamlight, Fenix, Anker Bolder).</p>
+                    <a href="#" class="affiliate-button" target="_blank" rel="noopener sponsored">
+                        <i class="fab fa-amazon"></i> Check Price Placeholder
+                    </a>
+                     <p class="text-xs text-gray-500 mt-1">(Affiliate Link Placeholder)</p>
+                 </div>
+                 <div class="border rounded-lg p-4 mb-6">
+                    <h3 class="text-xl font-semibold mb-2">Placeholder: Versatile Headlamp</h3>
+                    <p class="text-gray-600 text-sm mb-3">Review of a reliable headlamp suitable for various tasks (e.g., Petzl, Black Diamond).</p>
+                     <a href="#" class="affiliate-button" target="_blank" rel="noopener sponsored">
+                        <i class="fab fa-amazon"></i> Check Price Placeholder
+                    </a>
+                     <p class="text-xs text-gray-500 mt-1">(Affiliate Link Placeholder)</p>
+                 </div>
+                 <div class="border rounded-lg p-4 mb-6">
+                    <h3 class="text-xl font-semibold mb-2">Placeholder: Bright LED Lantern</h3>
+                    <p class="text-gray-600 text-sm mb-3">Review of a battery-powered or rechargeable lantern for area lighting (e.g., Coleman, LE).</p>
+                     <a href="#" class="affiliate-button" target="_blank" rel="noopener sponsored">
+                        <i class="fab fa-amazon"></i> Check Price Placeholder
+                    </a>
+                     <p class="text-xs text-gray-500 mt-1">(Affiliate Link Placeholder)</p>
+                 </div>
+
+                 <div class="adsense-placeholder mt-8">Ad Placeholder (e.g., Responsive)</div>
+            </div>
+        </section>
+
+        <section id="page-gear-first-aid" class="page-section">
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Building Your Emergency First Aid Kit</h1>
+                <p class="text-gray-600 mb-6 text-sm">Be ready to handle injuries when professional help might be delayed.</p>
+
+                <img src="https://images.unsplash.com/photo-1585435557343-37f92c7c3659?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Well-stocked first aid kit contents spread out" class="rounded-lg shadow-md mb-6 w-full h-64 md:h-96 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1350x384/cccccc/666666?text=First+Aid+Image+Unavailable';">
+
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    A well-stocked first aid kit is essential for any home, car, and emergency bag. In a disaster scenario, access to medical professionals could be limited, making basic first aid knowledge and supplies critical. You can buy pre-made kits or build your own.
+                </p>
+
+                 <div class="adsense-placeholder my-6">Ad Placeholder (e.g., 300x250 or Responsive)</div>
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Essential First Aid Kit Contents:</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8">
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                        <li>Bandages (various sizes, adhesive strips, gauze pads, roller gauze)</li>
+                        <li>Adhesive Tape</li>
+                        <li>Antiseptic Wipes & Solution (e.g., hydrogen peroxide, iodine)</li>
+                        <li>Antibiotic Ointment</li>
+                        <li>Pain Relievers (Ibuprofen, Acetaminophen)</li>
+                        <li>Antihistamines (for allergic reactions)</li>
+                        <li>Hydrocortisone Cream (for itching)</li>
+                        <li>Tweezers & Scissors</li>
+                        <li>Disposable Gloves (Nitrile preferred)</li>
+                        <li>CPR Breathing Barrier/Mask</li>
+                    </ul>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                        <li>Instant Cold Packs</li>
+                        <li>Elastic Bandage (for sprains)</li>
+                        <li>Triangular Bandage (for slings)</li>
+                        <li>Safety Pins</li>
+                        <li>Eye Wash Solution</li>
+                        <li>Burn Gel or Dressing</li>
+                        <li>Thermometer</li>
+                        <li>First Aid Manual/Guide</li>
+                        <li>Personal Medications (prescription & over-the-counter)</li>
+                        <li>Emergency Blanket</li>
+                    </ul>
+                </div>
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Customization & Maintenance:</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                    <li>Consider Your Needs: Add items specific to your family (e.g., baby supplies, EpiPen).</li>
+                    <li>Trauma Supplies (Optional but Recommended): Consider adding items like tourniquets, chest seals, and hemostatic gauze (requires proper training).</li>
+                    <li>Check Expiration Dates: Regularly review your kit and replace expired items.</li>
+                    <li>Location: Keep kits in accessible locations at home, in your car, and in your bug-out bag.</li>
+                    <li>Get Training: Basic first aid and CPR training significantly increases your ability to help effectively.</li>
+                 </ul>
+
+                 <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Recommended Pre-Made Kits (Placeholder):</h2>
+                  <div class="border rounded-lg p-4 mb-6">
+                    <h3 class="text-xl font-semibold mb-2">Placeholder: Comprehensive Home Kit</h3>
+                    <p class="text-gray-600 text-sm mb-3">Review of a well-regarded, comprehensive first aid kit suitable for home use (e.g., Surviveware, Adventure Medical Kits).</p>
+                    <a href="#" class="affiliate-button" target="_blank" rel="noopener sponsored">
+                        <i class="fab fa-amazon"></i> Check Price Placeholder
+                    </a>
+                     <p class="text-xs text-gray-500 mt-1">(Affiliate Link Placeholder)</p>
+                 </div>
+                 <div class="border rounded-lg p-4 mb-6">
+                    <h3 class="text-xl font-semibold mb-2">Placeholder: Compact Car/Travel Kit</h3>
+                    <p class="text-gray-600 text-sm mb-3">Review of a smaller, portable kit ideal for vehicles or individual carry.</p>
+                     <a href="#" class="affiliate-button" target="_blank" rel="noopener sponsored">
+                        <i class="fab fa-amazon"></i> Check Price Placeholder
+                    </a>
+                     <p class="text-xs text-gray-500 mt-1">(Affiliate Link Placeholder)</p>
+                 </div>
+
+
+                 <div class="adsense-placeholder mt-8">Ad Placeholder (e.g., Responsive)</div>
+            </div>
+        </section>
+
+        <section id="page-blog" class="page-section">
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Crisis-Ready Blog</h1>
+                <p class="text-gray-700 leading-relaxed mb-8">
+                    Dive deeper into specific preparedness topics, gear reviews, survival skills, and expert tips. Stay informed and build your resilience with our latest articles.
+                </p>
+
+                 <div class="adsense-placeholder my-6">Ad Placeholder (e.g., 728x90 or Responsive)</div>
+
+                <div class="space-y-8">
+                    <div class="border-b pb-8">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-2 hover:text-red-700 transition duration-300">
+                            <a href="#gear-radios" class="page-link" data-page="gear-radios">Top 10 Emergency Radios for 2025</a>
+                        </h2>
+                        <p class="text-sm text-gray-500 mb-3">May 5, 2025 | Gear Reviews</p>
+                         <img src="https://images.unsplash.com/photo-1589259599319-a54a7f56b5c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Emergency Radio" class="rounded-lg shadow-sm mb-4 w-full sm:w-1/2 md:w-1/3 float-left mr-4" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/666666?text=Radio+Preview';">
+                        <p class="text-gray-700 leading-relaxed mb-4 clear-both">
+                            Don't get caught without vital information during a crisis. We review the best emergency weather radios with features like hand-crank power, solar charging, NOAA alerts, and USB charging capabilities...
+                        </p>
+                        <a href="#gear-radios" class="text-red-600 hover:text-red-800 font-semibold page-link" data-page="gear-radios">Read More &rarr;</a>
+                    </div>
+
+                    <div class="border-b pb-8">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-2 hover:text-red-700 transition duration-300">
+                            <a href="#blog-post-bugout" class="page-link" data-page="blog-post-bugout">How to Build a 72-Hour Bug Out Bag</a>
+                        </h2>
+                        <p class="text-sm text-gray-500 mb-3">April 28, 2025 | Skills & Guides</p>
+                         <img src="https://images.unsplash.com/photo-1575789011494-ec1dcb53a190?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Backpack with survival gear" class="rounded-lg shadow-sm mb-4 w-full sm:w-1/2 md:w-1/3 float-left mr-4" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/666666?text=Bug+Out+Bag+Preview';">
+                        <p class="text-gray-700 leading-relaxed mb-4 clear-both">
+                            A Bug Out Bag (BOB) contains essentials to help you survive for at least 72 hours if you need to evacuate quickly. Learn what to pack, how to organize it, and key considerations for your personal needs...
+                        </p>
+                        <a href="#blog-post-bugout" class="text-red-600 hover:text-red-800 font-semibold page-link" data-page="blog-post-bugout">Read More &rarr;</a>
+                    </div>
+
+                     <div class="border-b pb-8">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-2 hover:text-red-700 transition duration-300">
+                            <a href="#blog-post-fema" class="page-link" data-page="blog-post-fema">What’s in a FEMA Recommended Emergency Kit?</a>
+                        </h2>
+                        <p class="text-sm text-gray-500 mb-3">April 15, 2025 | Checklists</p>
+                         <img src="https://images.unsplash.com/photo-1613279919991-6a58f6e5f1e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Emergency supplies kit" class="rounded-lg shadow-sm mb-4 w-full sm:w-1/2 md:w-1/3 float-left mr-4" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/666666?text=FEMA+Kit+Preview';">
+                        <p class="text-gray-700 leading-relaxed mb-4 clear-both">
+                            FEMA provides guidelines for basic disaster supply kits. We break down their recommendations and offer tips on how to customize your kit for your family and potential local hazards...
+                        </p>
+                        <a href="#blog-post-fema" class="text-red-600 hover:text-red-800 font-semibold page-link" data-page="blog-post-fema">Read More &rarr;</a>
+                    </div>
+
+                    </div>
+
+                 <div class="adsense-placeholder mt-8">Ad Placeholder (e.g., Responsive)</div>
+            </div>
+        </section>
+
+        <section id="page-blog-post-bugout" class="page-section">
+             <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">How to Build a 72-Hour Bug Out Bag</h1>
+                <p class="text-sm text-gray-500 mb-6">April 28, 2025 | Skills & Guides</p>
+
+                 <img src="https://images.unsplash.com/photo-1575789011494-ec1dcb53a190?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Backpack with survival gear spilling out slightly" class="rounded-lg shadow-md mb-6 w-full h-64 md:h-96 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1350x384/cccccc/666666?text=Bug+Out+Bag+Image+Unavailable';">
+
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Placeholder text: This article will detail the essential components of a 72-hour Bug Out Bag (BOB). It will cover categories like water and filtration, food (non-perishable, high-calorie), shelter (tarp, emergency blanket), fire starting, first aid, navigation (map, compass), tools (multi-tool, knife), lighting, communication, sanitation, and personal documents. We'll discuss bag selection, weight considerations, and customization based on climate and personal needs.
+                </p>
+
+                <div class="adsense-placeholder my-6">Ad Placeholder (e.g., 300x250 or Responsive)</div>
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Key Categories (Placeholder):</h2>
+                 <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                     <li>Water (Filter/Purification Tablets, Bottles)</li>
+                     <li>Food (Energy Bars, Dehydrated Meals)</li>
+                     <li>Shelter (Tarp, Bivvy Sack, Tent)</li>
+                     <li>Fire (Lighter, Ferro Rod, Tinder)</li>
+                     <li>First Aid (Comprehensive Kit)</li>
+                     <li>Navigation (Map, Compass, GPS Backup)</li>
+                     <li>Tools (Knife, Multi-tool, Saw)</li>
+                     <li>Lighting (Headlamp, Flashlight)</li>
+                     <li>Clothing (Layers, Rain Gear)</li>
+                     <li>Personal Items (Meds, Documents)</li>
+                 </ul>
+
+                 <p class="text-gray-700 leading-relaxed mt-6">
+                    Placeholder text: More detailed content, tips on packing efficiently, and links to recommended gear would go here. Include discussion on practice and knowing how to use the gear in your bag.
+                 </p>
+
+                 <div class="adsense-placeholder mt-8">Ad Placeholder (e.g., Responsive)</div>
+            </div>
+        </section>
+
+        <section id="page-blog-post-fema" class="page-section">
+             <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What’s in a FEMA Recommended Emergency Kit?</h1>
+                 <p class="text-sm text-gray-500 mb-6">April 15, 2025 | Checklists</p>
+
+                 <img src="https://images.unsplash.com/photo-1613279919991-6a58f6e5f1e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Assortment of emergency kit supplies like water, food, flashlight" class="rounded-lg shadow-md mb-6 w-full h-64 md:h-96 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/1350x384/cccccc/666666?text=FEMA+Kit+Image+Unavailable';">
+
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    Placeholder text: This article will outline the basic emergency supply kit recommendations provided by FEMA (Federal Emergency Management Agency). It will list core items like water, food, radio, flashlight, first aid kit, whistle, mask, plastic sheeting/duct tape, sanitation items, tools, can opener, maps, and cell phone chargers. We'll explain the rationale behind these items and discuss additional considerations FEMA suggests, such as medications, documents, cash, sleeping bags, clothing, and items for specific needs (infants, pets).
+                </p>
+
+                 <div class="adsense-placeholder my-6">Ad Placeholder (e.g., 300x250 or Responsive)</div>
+
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">FEMA Basic Kit Checklist (Based on Ready.gov):</h2>
+                 <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                    <li>Water (one gallon per person per day for several days)</li>
+                    <li>Food (at least a several-day supply of non-perishable food)</li>
+                    <li>Battery-powered or hand crank radio and a NOAA Weather Radio</li>
+                    <li>Flashlight</li>
+                    <li>First aid kit</li>
+                    <li>Extra batteries</li>
+                    <li>Whistle (to signal for help)</li>
+                    <li>Dust mask (to help filter contaminated air)</li>
+                    <li>Plastic sheeting and duct tape (to shelter-in-place)</li>
+                    <li>Moist towelettes, garbage bags and plastic ties (for personal sanitation)</li>
+                    <li>Wrench or pliers (to turn off utilities)</li>
+                    <li>Manual can opener (for food)</li>
+                    <li>Local maps</li>
+                    <li>Cell phone with chargers and a backup battery</li>
+                 </ul>
+
+                 <p class="text-gray-700 leading-relaxed mt-6">
+                    Placeholder text: Further discussion on customizing the kit, storage tips, and links to the official Ready.gov resources would be included here.
+                 </p>
+
+                 <div class="adsense-placeholder mt-8">Ad Placeholder (e.g., Responsive)</div>
+            </div>
+        </section>
+
+        <section id="page-tools" class="page-section">
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Preparedness Tools & Downloads</h1>
+                <p class="text-gray-700 leading-relaxed mb-8">
+                    Access helpful resources to streamline your emergency planning, including printable checklists and interactive tools.
+                </p>
+
+                 <div class="adsense-placeholder my-6">Ad Placeholder (e.g., 728x90 or Responsive)</div>
+
+                 <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Printable Checklists (PDFs):</h2>
+                 <div class="space-y-4 mb-8">
+                     <a href="#" class="download-button" download="Family-Emergency-Plan-Template-CrisisReady.pdf">
+                         <i class="fas fa-users"></i> Family Emergency Plan Template
+                     </a>
+                     <p class="text-sm text-gray-500 ml-2 inline">(Placeholder Link)</p>
+                     <br>
+                     <a href="#" class="download-button" download="Emergency-Kit-Checklist-CrisisReady.pdf">
+                         <i class="fas fa-box"></i> Basic Emergency Kit Checklist
+                     </a>
+                      <p class="text-sm text-gray-500 ml-2 inline">(Placeholder Link)</p>
+                     <br>
+                     <a href="#" class="download-button" download="Hurricane-Checklist-CrisisReady.pdf">
+                         <i class="fas fa-wind"></i> Hurricane Preparedness Checklist
+                     </a>
+                      <p class="text-sm text-gray-500 ml-2 inline">(Placeholder Link)</p>
+                     <br>
+                     <a href="#" class="download-button" download="Wildfire-Checklist-CrisisReady.pdf">
+                         <i class="fas fa-fire"></i> Wildfire Safety Checklist
+                     </a>
+                      <p class="text-sm text-gray-500 ml-2 inline">(Placeholder Link)</p>
+                 </div>
+
+                 <h2 class="text-2xl font-semibold text-gray-800 mb-4 mt-8">Interactive Tools:</h2>
+                 <div class="border rounded-lg p-4 mb-6">
+                    <h3 class="text-xl font-semibold mb-2">Disaster Risk by Zip Code (Conceptual)</h3>
+                    <p class="text-gray-600 text-sm mb-3">
+                        Enter your US zip code to see potential natural disaster risks based on historical data and public sources (e.g., FEMA data).
+                        <strong class="text-red-600"> (Note: This is a placeholder concept. Building a fully functional, accurate map requires significant data integration and development.)</strong>
+                    </p>
+                    <div class="map-container my-4">
+                         <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117181.52299995878!2d-71.14200199899916!3d42.314264033157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e3652d0d3d311b%3A0x787cbf240162e8a0!2sBoston%2C%20MA%2C%20USA!5e0!3m2!1sen!2sin!4v1678886688000!5m2!1sen!2sin"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Placeholder Map of USA">
+                        </iframe>
+                    </div>
+                     <form class="flex gap-2">
+                         <input type="text" pattern="[0-9]{5}" title="Enter a 5-digit US Zip Code" placeholder="Enter 5-Digit Zip Code" class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 flex-grow">
+                         <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition duration-300">Check Risk</button>
+                     </form>
+                     <p class="text-xs text-gray-500 mt-2">Risk data is illustrative and based on publicly available information. Always consult official local emergency management agencies.</p>
+                 </div>
+
+                 <div class="adsense-placeholder mt-8">Ad Placeholder (e.g., Responsive)</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 mt-12 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-4">
+                <a href="#home" class="text-xl font-bold text-white hover:text-red-500 transition duration-300 page-link">Crisis-Ready</a>
+            </div>
+            <nav class="flex justify-center space-x-4 mb-4 text-sm">
+                <a href="#home" class="hover:text-white page-link" data-page="home">Home</a>
+                <a href="#blog" class="hover:text-white page-link" data-page="blog">Blog</a>
+                <a href="#tools" class="hover:text-white page-link" data-page="tools">Tools</a>
+                <a href="#" class="hover:text-white">About Us (Placeholder)</a>
+                <a href="#" class="hover:text-white">Contact (Placeholder)</a>
+                <a href="#" class="hover:text-white">Privacy Policy (Placeholder)</a>
+            </nav>
+            <p class="text-xs text-gray-400">&copy; 2025 Crisis-Ready. All Rights Reserved. Information provided is for educational purposes only. Always consult with local authorities and experts for specific advice.</p>
+            <p class="text-xs text-gray-500 mt-1">Disclaimer: This site may contain affiliate links. We may earn a commission if you purchase products through these links.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pageLinks = document.querySelectorAll('.page-link');
+            const navLinks = document.querySelectorAll('header nav .nav-link'); // Desktop nav links
+            const mobileNavLinks = document.querySelectorAll('#mobile-menu .page-link'); // Mobile nav links
+            const pageSections = document.querySelectorAll('.page-section');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Function to show a page and hide others
+            function showPage(pageId) {
+                // Hide all sections
+                pageSections.forEach(section => {
+                    section.style.display = 'none';
+                });
+
+                // Show the target section
+                const targetPage = document.getElementById(`page-${pageId}`);
+                if (targetPage) {
+                    targetPage.style.display = 'block';
+                    window.scrollTo(0, 0); // Scroll to top
+                } else {
+                    // Fallback to home if page not found
+                    document.getElementById('page-home').style.display = 'block';
+                     window.scrollTo(0, 0);
+                }
+
+                 // Update active state for desktop nav links
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.page === pageId || (link.dataset.page === 'home' && pageId === 'home')) {
+                        link.classList.add('active');
+                    }
+                    // Handle dropdown parent highlighting (basic)
+                    const parentGroup = link.closest('.group');
+                    if (parentGroup) {
+                        const linksInDropdown = parentGroup.querySelectorAll('.page-link');
+                        let isActiveInChildren = false;
+                        linksInDropdown.forEach(childLink => {
+                           if(childLink.dataset.page === pageId) isActiveInChildren = true;
+                        });
+                        const button = parentGroup.querySelector('button.nav-link');
+                         if (button) {
+                            if (isActiveInChildren) button.classList.add('active');
+                            else button.classList.remove('active');
+                         }
+                    }
+                });
+
+                 // Close mobile menu after navigation
+                 mobileMenu.classList.add('hidden');
+            }
+
+            // Handle clicks on page links
+            pageLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent default anchor jump
+                    const pageId = link.dataset.page;
+                    if (pageId) {
+                        // Update URL hash (optional, good for bookmarking/history)
+                        // history.pushState(null, '', `#${pageId}`); // Causes issues in some embedded environments
+                        showPage(pageId);
+                    }
+                });
+            });
+
+            // Mobile menu toggle
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Initial page load handling (based on hash or default to home)
+            // const initialPage = window.location.hash.substring(1) || 'home'; // Disabled due to potential issues
+            const initialPage = 'home'; // Default to home
+            showPage(initialPage);
+
+        });
+    </script>
+
+</body>
+</html>
